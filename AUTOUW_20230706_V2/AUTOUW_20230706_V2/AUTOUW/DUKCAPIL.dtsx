@@ -1,0 +1,1802 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/6/2023 9:50:09 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ID-AFI-42DRKR3"
+  DTS:CreatorName="AXA-INDONESIA\Mega Lestarie"
+  DTS:DTSID="{FAF64E2F-11EA-4093-B8F4-60D78CCC7621}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.150"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{13CA5ACD-A9DA-4E63-9B7E-EF6C172F046F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DUKCAPIL"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{816F4D78-065E-4AB9-A1D9-0A37989C13E8}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DUKCAPIL">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\DUKCAPIL\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{608064A6-2D8A-40F2-9FCC-2907F746DADC}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[NIK_GETDATA_NEW]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{06A55C32-4284-40C6-8B1F-94EB54E9B20B}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[wrcsql44.DUKCAPIL_AFI.AFI_IDAS_SQL]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NIK]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="NIK"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NIK]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[NIK]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nama_lgkp]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="nama_lgkp"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NAMA_LGKP]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[nama_lgkp]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[jenis_klmin]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="jenis_klmin"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[JENIS_KLMIN]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[jenis_klmin]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tmpt_lhr]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="tmpt_lhr"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TMPT_LHR]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tmpt_lhr]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tgl_lhr]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="tgl_lhr"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TGL_LHR]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tgl_lhr]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[status_kawin]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="status_kawin"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_KAWIN]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[status_kawin]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[jenis_pkrjn]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="jenis_pkrjn"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[JENIS_PKRJN]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[jenis_pkrjn]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nama_lgkp_ibu]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="nama_lgkp_ibu"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NAMA_LGKP_IBU]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[nama_lgkp_ibu]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[prop_name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="prop_name"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PROP_NAME]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[prop_name]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kab_name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="kab_name"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KAB_NAME]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[kab_name]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kel_name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="kel_name"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KEL_NAME]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[kel_name]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[alamat]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="alamat"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ALAMAT]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[alamat]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[no_rw]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="no_rw"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NO_RW]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_rw]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[no_rt]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="no_rt"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NO_RT]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_rt]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[STATUS_REQUEST]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="9"
+                          cachedName="STATUS_REQUEST"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_REQUEST]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATUS_REQUEST]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[created_date]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="created_date"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Created_Date]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[created_date]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[POLICYNO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="POLICYNO"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[POLICY_NO]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[POLICYNO]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[alamat_verification]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="alamat_verification"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_ALAMAT]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[alamat_verification]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[jenis_pkrjn_verification]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="jenis_pkrjn_verification"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_JENIS_PKRJN]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[jenis_pkrjn_verification]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kab_name_verification]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="kab_name_verification"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_KAB_NAME]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[kab_name_verification]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[no_kec_verification]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="no_kec_verification"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_KEC_NAME]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_kec_verification]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kel_name_verification]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="kel_name_verification"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_KEL_NAME]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[kel_name_verification]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nama_lgkp_verification]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="nama_lgkp_verification"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_NAMA_LGKP]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[nama_lgkp_verification]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nama_lgkp_ibu_verification]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="nama_lgkp_ibu_verification"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_NAMA_LGKP_IBU]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[nama_lgkp_ibu_verification]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[jenis_klmin_verification]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="jenis_klmin_verification"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_JENIS_KLMIN]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[jenis_klmin_verification]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[no_rw_verification]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="no_rw_verification"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_NO_RW]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_rw_verification]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[status_kawin_verification]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="status_kawin_verification"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_STATUS_KAWIN]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[status_kawin_verification]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[prop_name_verification]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="prop_name_verification"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_PROP_NAME]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[prop_name_verification]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tmpt_lhr_verification]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="tmpt_lhr_verification"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_TGL_LHR]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tmpt_lhr_verification]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tgl_lhr_verification]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="tgl_lhr_verification"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_TMPT_LHR]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tgl_lhr_verification]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[no_rt_verification]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="no_rt_verification"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_NO_RT]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_rt_verification]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[USER_APPS]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="12"
+                          cachedName="USER_APPS"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[USER_APPS]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[USER_APPS]" />
+                        <inputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UPDATE_DATE]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="UPDATE_DATE"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Updated_Date]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[UPDATE_DATE]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                          dataType="i8"
+                          name="ID" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[POLICY_NO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="POLICY_NO" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NIK]"
+                          codePage="1252"
+                          dataType="str"
+                          length="16"
+                          name="NIK" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_NIK]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="STATUS_RESPONSE_NIK" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NAMA_LGKP]"
+                          codePage="1252"
+                          dataType="text"
+                          name="NAMA_LGKP" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_NAMA_LGKP]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="STATUS_RESPONSE_NAMA_LGKP" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[JENIS_KLMIN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="JENIS_KLMIN" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_JENIS_KLMIN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="STATUS_RESPONSE_JENIS_KLMIN" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TMPT_LHR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="TMPT_LHR" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_TMPT_LHR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="STATUS_RESPONSE_TMPT_LHR" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TGL_LHR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="TGL_LHR" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_TGL_LHR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="STATUS_RESPONSE_TGL_LHR" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_KAWIN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="11"
+                          name="STATUS_KAWIN" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_STATUS_KAWIN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="STATUS_RESPONSE_STATUS_KAWIN" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PDDK_AKH]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="PDDK_AKH" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_PDDK_AKH]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="STATUS_RESPONSE_PDDK_AKH" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[JENIS_PKRJN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="JENIS_PKRJN" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_JENIS_PKRJN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="STATUS_RESPONSE_JENIS_PKRJN" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NAMA_LGKP_IBU]"
+                          codePage="1252"
+                          dataType="text"
+                          name="NAMA_LGKP_IBU" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_NAMA_LGKP_IBU]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="STATUS_RESPONSE_NAMA_LGKP_IBU" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PROP_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="PROP_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_PROP_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="STATUS_RESPONSE_PROP_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KAB_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="KAB_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_KAB_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="STATUS_RESPONSE_KAB_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KEC_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="KEC_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_KEC_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="STATUS_RESPONSE_KEC_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KEL_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="KEL_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_KEL_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="STATUS_RESPONSE_KEL_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ALAMAT]"
+                          codePage="1252"
+                          dataType="text"
+                          name="ALAMAT" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_ALAMAT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="STATUS_RESPONSE_ALAMAT" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NO_RT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="NO_RT" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_NO_RT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="STATUS_RESPONSE_NO_RT" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NO_RW]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="NO_RW" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RESPONSE_NO_RW]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="STATUS_RESPONSE_NO_RW" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[USER_APPS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="24"
+                          name="USER_APPS" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_REQUEST]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="STATUS_REQUEST" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MDM_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="14"
+                          name="MDM_ID" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Created_Date]"
+                          dataType="dbTimeStamp"
+                          name="Created_Date" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Updated_Date]"
+                          dataType="dbTimeStamp"
+                          name="Updated_Date" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT '' [POLICYNO],
+CASE WHEN response IS NULL THEN 'Data Ditemukan' else 'Data tidak ditemukan'
+END [RESPONSE], NIK, nama_lgkp,  nama_lgkp_verification, jenis_klmin,
+jenis_klmin_verification,
+tmpt_lhr, tmpt_lhr_verification,
+tgl_lhr,
+tgl_lhr_verification,
+status_kawin,
+status_kawin_verification,
+jenis_pkrjn,
+jenis_pkrjn_verification,
+nama_lgkp_ibu,
+nama_lgkp_ibu_verification,
+prop_name,
+prop_name_verification,
+kab_name,
+kab_name_verification,
+no_kec,
+no_kec_verification,
+kel_name,
+kel_name_verification,
+alamat_verification,
+alamat,
+no_rw,
+no_rw_verification,
+no_rt,
+no_rt_verification,
+CREATED_BY,
+CASE WHEN response IS NULL THEN 'With Data' else 'No Data'
+END [STATUS_REQUEST],
+80 treshold,
+created_date,
+created_date [UPDATE_DATE],
+'api_user_uat' [USER_APPS]
+ FROM dukcapil_raw_data
+ where nik_verification is not null or response_code is not null</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{F33BBC0C-DB28-417A-B251-2A438A77104D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DUKCAPILSERVICE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RESPONSE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RESPONSE]"
+                          length="20"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RESPONSE]"
+                          name="RESPONSE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[NIK]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NIK]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[NIK]"
+                          name="NIK"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[nama_lgkp]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nama_lgkp]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[nama_lgkp]"
+                          name="nama_lgkp"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[nama_lgkp_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nama_lgkp_verification]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[nama_lgkp_verification]"
+                          name="nama_lgkp_verification"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[jenis_klmin]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[jenis_klmin]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[jenis_klmin]"
+                          name="jenis_klmin"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[jenis_klmin_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[jenis_klmin_verification]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[jenis_klmin_verification]"
+                          name="jenis_klmin_verification"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tmpt_lhr]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tmpt_lhr]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tmpt_lhr]"
+                          name="tmpt_lhr"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tmpt_lhr_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tmpt_lhr_verification]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tmpt_lhr_verification]"
+                          name="tmpt_lhr_verification"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tgl_lhr]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tgl_lhr]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tgl_lhr]"
+                          name="tgl_lhr"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tgl_lhr_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tgl_lhr_verification]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tgl_lhr_verification]"
+                          name="tgl_lhr_verification"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[status_kawin]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[status_kawin]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[status_kawin]"
+                          name="status_kawin"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[status_kawin_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[status_kawin_verification]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[status_kawin_verification]"
+                          name="status_kawin_verification"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[jenis_pkrjn]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[jenis_pkrjn]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[jenis_pkrjn]"
+                          name="jenis_pkrjn"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[jenis_pkrjn_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[jenis_pkrjn_verification]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[jenis_pkrjn_verification]"
+                          name="jenis_pkrjn_verification"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[nama_lgkp_ibu]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nama_lgkp_ibu]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[nama_lgkp_ibu]"
+                          name="nama_lgkp_ibu"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[nama_lgkp_ibu_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nama_lgkp_ibu_verification]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[nama_lgkp_ibu_verification]"
+                          name="nama_lgkp_ibu_verification"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[prop_name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[prop_name]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[prop_name]"
+                          name="prop_name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[prop_name_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[prop_name_verification]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[prop_name_verification]"
+                          name="prop_name_verification"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[kab_name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kab_name]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[kab_name]"
+                          name="kab_name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[kab_name_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kab_name_verification]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[kab_name_verification]"
+                          name="kab_name_verification"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_kec]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[no_kec]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_kec]"
+                          name="no_kec"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_kec_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[no_kec_verification]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_kec_verification]"
+                          name="no_kec_verification"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[kel_name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kel_name]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[kel_name]"
+                          name="kel_name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[kel_name_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kel_name_verification]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[kel_name_verification]"
+                          name="kel_name_verification"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[alamat_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[alamat_verification]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[alamat_verification]"
+                          name="alamat_verification"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[alamat]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[alamat]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[alamat]"
+                          name="alamat"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_rw]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[no_rw]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_rw]"
+                          name="no_rw"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_rw_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[no_rw_verification]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_rw_verification]"
+                          name="no_rw_verification"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_rt]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[no_rt]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_rt]"
+                          name="no_rt"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_rt_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[no_rt_verification]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_rt_verification]"
+                          name="no_rt_verification"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CREATED_BY]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CREATED_BY]"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CREATED_BY]"
+                          name="CREATED_BY"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATUS_REQUEST]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[STATUS_REQUEST]"
+                          length="9"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATUS_REQUEST]"
+                          name="STATUS_REQUEST"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[treshold]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[treshold]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[treshold]"
+                          name="treshold"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[created_date]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[created_date]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[created_date]"
+                          name="created_date"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[UPDATE_DATE]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UPDATE_DATE]"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[UPDATE_DATE]"
+                          name="UPDATE_DATE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[POLICYNO]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[POLICYNO]"
+                          length="1"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[POLICYNO]"
+                          name="POLICYNO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[USER_APPS]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[USER_APPS]"
+                          length="12"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[USER_APPS]"
+                          name="USER_APPS"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RESPONSE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="RESPONSE" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NIK]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="NIK" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nama_lgkp]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="nama_lgkp" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nama_lgkp_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="nama_lgkp_verification" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[jenis_klmin]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="jenis_klmin" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[jenis_klmin_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="jenis_klmin_verification" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tmpt_lhr]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="tmpt_lhr" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tmpt_lhr_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="tmpt_lhr_verification" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tgl_lhr]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="tgl_lhr" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tgl_lhr_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="tgl_lhr_verification" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[status_kawin]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="status_kawin" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[status_kawin_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="status_kawin_verification" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[jenis_pkrjn]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="jenis_pkrjn" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[jenis_pkrjn_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="jenis_pkrjn_verification" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nama_lgkp_ibu]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="nama_lgkp_ibu" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nama_lgkp_ibu_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="nama_lgkp_ibu_verification" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[prop_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="prop_name" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[prop_name_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="prop_name_verification" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kab_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="kab_name" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kab_name_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="kab_name_verification" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[no_kec]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="no_kec" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[no_kec_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="no_kec_verification" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kel_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="kel_name" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kel_name_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="kel_name_verification" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[alamat_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="alamat_verification" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[alamat]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="alamat" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[no_rw]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="no_rw" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[no_rw_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="no_rw_verification" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[no_rt]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="no_rt" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[no_rt_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="no_rt_verification" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CREATED_BY]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="CREATED_BY" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[STATUS_REQUEST]"
+                          codePage="1252"
+                          dataType="str"
+                          length="9"
+                          name="STATUS_REQUEST" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[treshold]"
+                          dataType="i4"
+                          name="treshold" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[created_date]"
+                          dataType="dbTimeStamp"
+                          name="created_date" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UPDATE_DATE]"
+                          dataType="dbTimeStamp"
+                          name="UPDATE_DATE" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[POLICYNO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="POLICYNO" />
+                        <externalMetadataColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[USER_APPS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="12"
+                          name="USER_APPS" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[POLICYNO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[POLICYNO]"
+                          name="POLICYNO" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RESPONSE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RESPONSE]"
+                          name="RESPONSE" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NIK]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NIK]"
+                          name="NIK" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nama_lgkp]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nama_lgkp]"
+                          name="nama_lgkp" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nama_lgkp_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nama_lgkp_verification]"
+                          name="nama_lgkp_verification" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[jenis_klmin]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[jenis_klmin]"
+                          name="jenis_klmin" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[jenis_klmin_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[jenis_klmin_verification]"
+                          name="jenis_klmin_verification" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tmpt_lhr]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tmpt_lhr]"
+                          name="tmpt_lhr" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tmpt_lhr_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tmpt_lhr_verification]"
+                          name="tmpt_lhr_verification" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tgl_lhr]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tgl_lhr]"
+                          name="tgl_lhr" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tgl_lhr_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tgl_lhr_verification]"
+                          name="tgl_lhr_verification" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[status_kawin]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[status_kawin]"
+                          name="status_kawin" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[status_kawin_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[status_kawin_verification]"
+                          name="status_kawin_verification" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[jenis_pkrjn]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[jenis_pkrjn]"
+                          name="jenis_pkrjn" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[jenis_pkrjn_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[jenis_pkrjn_verification]"
+                          name="jenis_pkrjn_verification" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nama_lgkp_ibu]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nama_lgkp_ibu]"
+                          name="nama_lgkp_ibu" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nama_lgkp_ibu_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nama_lgkp_ibu_verification]"
+                          name="nama_lgkp_ibu_verification" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[prop_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[prop_name]"
+                          name="prop_name" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[prop_name_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[prop_name_verification]"
+                          name="prop_name_verification" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kab_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kab_name]"
+                          name="kab_name" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kab_name_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kab_name_verification]"
+                          name="kab_name_verification" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[no_kec]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[no_kec]"
+                          name="no_kec" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[no_kec_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[no_kec_verification]"
+                          name="no_kec_verification" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kel_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kel_name]"
+                          name="kel_name" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kel_name_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kel_name_verification]"
+                          name="kel_name_verification" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[alamat_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[alamat_verification]"
+                          name="alamat_verification" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[alamat]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[alamat]"
+                          name="alamat" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[no_rw]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[no_rw]"
+                          name="no_rw" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[no_rw_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[no_rw_verification]"
+                          name="no_rw_verification" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[no_rt]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[no_rt]"
+                          name="no_rt" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[no_rt_verification]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[no_rt_verification]"
+                          name="no_rt_verification" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CREATED_BY]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CREATED_BY]"
+                          name="CREATED_BY" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[STATUS_REQUEST]"
+                          codePage="1252"
+                          dataType="str"
+                          length="9"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[STATUS_REQUEST]"
+                          name="STATUS_REQUEST" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[treshold]"
+                          dataType="i4"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[treshold]"
+                          name="treshold" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[created_date]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[created_date]"
+                          name="created_date" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UPDATE_DATE]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UPDATE_DATE]"
+                          name="UPDATE_DATE" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[USER_APPS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="12"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[USER_APPS]"
+                          name="USER_APPS" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\DUKCAPIL\Data Flow Task.Paths[OLE DB Source Output]"
+                  endId="Package\DUKCAPIL\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\DUKCAPIL\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\DUKCAPIL\update isetl"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{896EEA50-1F97-4E42-924F-908BD4E094A8}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="update isetl"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{F33BBC0C-DB28-417A-B251-2A438A77104D}"
+              SQLTask:SqlStatementSource="update dukcapil_raw_data&#xA;set IS_ETL=1&#xA; where nik_verification is not null or response_code is not null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\DUKCAPIL.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{FF9BAD6E-6825-4C50-83A5-8F3279C69B32}"
+          DTS:From="Package\DUKCAPIL\Data Flow Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\DUKCAPIL\update isetl" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,43"
+          Id="Package\DUKCAPIL\Data Flow Task"
+          TopLeft="25.7499941326677,19.6666645745436" />
+        <NodeLayout
+          Size="134,43"
+          Id="Package\DUKCAPIL\update isetl"
+          TopLeft="55.2499983422458,116.799997303486" />
+        <EdgeLayout
+          Id="Package\DUKCAPIL.PrecedenceConstraints[Constraint]"
+          TopLeft="101.749994132668,62.3333312412103">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.5000042095782,54.4666660622756"
+              Start="0,0"
+              End="20.5000042095782,46.9666660622756">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.2333330311378" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.2333330311378"
+                    Point2="0,27.2333330311378"
+                    Point3="4,27.2333330311378" />
+                  <mssgle:LineSegment
+                    End="16.5000042095782,27.2333330311378" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.5000042095782,27.2333330311378"
+                    Point2="20.5000042095782,27.2333330311378"
+                    Point3="20.5000042095782,31.2333330311378" />
+                  <mssgle:LineSegment
+                    End="20.5000042095782,46.9666660622756" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="261,215"
+          Size="261,257"
+          Id="Package\DUKCAPIL"
+          TopLeft="56.2499991618097,53.2999990469218" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DUKCAPIL\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="172,43"
+          Id="Package\DUKCAPIL\Data Flow Task\OLE DB Destination"
+          TopLeft="213.749996814877,94.2499983146787" />
+        <NodeLayout
+          Size="151,43"
+          Id="Package\DUKCAPIL\Data Flow Task\OLE DB Source"
+          TopLeft="86.749998677522,11.0999998372793" />
+        <EdgeLayout
+          Id="Package\DUKCAPIL\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="162.249998677522,54.0999998372793">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="137.499998137355,40.1499984773994"
+              Start="0,0"
+              End="137.499998137355,32.6499984773994">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.0749992386997" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.0749992386997"
+                    Point2="0,20.0749992386997"
+                    Point3="4,20.0749992386997" />
+                  <mssgle:LineSegment
+                    End="133.499998137355,20.0749992386997" />
+                  <mssgle:CubicBezierSegment
+                    Point1="133.499998137355,20.0749992386997"
+                    Point2="137.499998137355,20.0749992386997"
+                    Point3="137.499998137355,24.0749992386997" />
+                  <mssgle:LineSegment
+                    End="137.499998137355,32.6499984773994" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DUKCAPIL\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DUKCAPIL\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

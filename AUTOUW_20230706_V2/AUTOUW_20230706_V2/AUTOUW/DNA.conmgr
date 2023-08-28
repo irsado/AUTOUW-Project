@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DNA"
+  DTS:DTSID="{27C4D351-4A00-4298-AD84-A62E39147C10}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=WRCSQL10;User ID=afi_idas_sql;Initial Catalog=DNA;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkAw03UN3JUaRKxjxkinyyQAAAAACAAAAAAADZgAAwAAAABAAAAC3asJgH/vTj/UFsFzvUc++AAAAAASAAACgAAAAEAAAADeaz8UcF0Ar11wbxg+H4qyAAAAADtOCb5tv0ak/gNrLkkMbhU0E4/9f+gZE9GyGPTHXLhfa6y0j/ArGmuAhvX333IboeTIbs2L9EBmMbX3gUNCXu6ElFxL6NDrQ0MLfPJJ8aDVgAx/ie9nUy/M4FWDG6iJYUnK4SPRcgUMkPRGy+FyXttzb+nHvUbuKYNPEpW1HUmMUAAAAwO0UqHhSUEpFwgeLgfxIOs+FX0M=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

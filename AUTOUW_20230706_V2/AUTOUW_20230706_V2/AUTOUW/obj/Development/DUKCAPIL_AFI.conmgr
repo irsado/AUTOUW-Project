@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="wrcsql44.DUKCAPIL_AFI.AFI_IDAS_SQL"
+  DTS:DTSID="{06A55C32-4284-40C6-8B1F-94EB54E9B20B}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=wrcsql44;User ID=AFI_IDAS_SQL;Initial Catalog=DUKCAPIL_AFI;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

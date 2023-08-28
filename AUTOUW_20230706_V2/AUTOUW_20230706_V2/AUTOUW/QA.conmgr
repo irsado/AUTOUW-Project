@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="QA"
+  DTS:DTSID="{DD78DE2C-B122-49A7-84AC-E5A45DA510BE}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=wrdsql10;User ID=confirmation_app;Initial Catalog=qa_service;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANSViaN8QZ02hfsZI6q49SgAAAAACAAAAAAADZgAAwAAAABAAAAAGkW5re8Z2zJE19ryplXl2AAAAAASAAACgAAAAEAAAANuG3PlsgFW4KKAAamHWBimAAAAAX2vG2iPPK04kq4UT6FzHbohQJGmIdjOMbu+9h2dZwl45LorGf1w8TpeENfBUDFD9hy5SLn2oXNCfBb7QjGgXFQZiUDOXxnm+VJviWr+VG5X82WKYgSzLDnuWccviA/+Tmz7uQlz+yoPHb2ir0NMbHyqqsVXBryOiRxXlay0Jl+0UAAAAVyUQIDOz2Pq6sn2x07aOWEIc5Iw=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,1746 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/16/2023 3:20:08 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ID-AFI-42DRKR3"
+  DTS:CreatorName="AXA-INDONESIA\Mega Lestarie"
+  DTS:DTSID="{7A381C85-1165-4297-9B87-B09F97218C57}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.150"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{39EF5A6F-2771-4F56-976F-B0E6CF5A6AC5}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\COUNTRY"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{b32a609a-136f-4595-a204-ee3ce37518bf}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="COUNTRY">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\COUNTRY\CONFIG_COUNTRY"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{31f85c0d-9d35-4bee-9abb-7657f04afaa6}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CONFIG_COUNTRY"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="CONFIG_COUNTRY"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[CONFIG_COUNTRY]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY.Connections[OleDbConnection]"
+                      connectionManagerID="{B3626D08-56D2-4588-BB8F-0594F20715F0}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[BR]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY.Inputs[OLE DB Destination Input].Columns[REFER_TO_UW]"
+                          cachedDataType="i4"
+                          cachedName="REFER_TO_UW"
+                          externalMetadataColumnId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY.Inputs[OLE DB Destination Input].ExternalColumns[REFER_TO_UW]"
+                          lineageId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output].Columns[REFER_TO_UW]" />
+                        <inputColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY.Inputs[OLE DB Destination Input].Columns[ID]"
+                          cachedDataType="i4"
+                          cachedName="ID"
+                          externalMetadataColumnId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                          lineageId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]" />
+                        <inputColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY.Inputs[OLE DB Destination Input].Columns[COUNTRY_CODE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="225"
+                          cachedName="COUNTRY_CODE"
+                          externalMetadataColumnId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRY_CODE]"
+                          lineageId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output].Columns[COUNTRY_CODE]" />
+                        <inputColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY.Inputs[OLE DB Destination Input].Columns[COUNTRY_DESC]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="225"
+                          cachedName="COUNTRY_DESC"
+                          externalMetadataColumnId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRY_DESC]"
+                          lineageId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output].Columns[COUNTRY_DESC]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY.Inputs[OLE DB Destination Input].ExternalColumns[REFER_TO_UW]"
+                          dataType="i4"
+                          name="REFER_TO_UW" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                          dataType="i4"
+                          name="ID" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRY_CODE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="225"
+                          name="COUNTRY_CODE" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRY_DESC]"
+                          codePage="1252"
+                          dataType="str"
+                          length="225"
+                          name="COUNTRY_DESC" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT  [NationalityId] [ID]
+      ,[NationalityCode] [COUNTRY_CODE]
+      ,[NationalityDesc] [COUNTRY_DESC]
+	  , CASE WHEN [NationalityDesc]='INDONESIA' THEN 0
+	  ELSE 1 END [REFER_TO_UW]
+  FROM [DNA].[dbo].[Nationality]</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{27C4D351-4A00-4298-AD84-A62E39147C10}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DNA]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output].Columns[REFER_TO_UW]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[REFER_TO_UW]"
+                          lineageId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output].Columns[REFER_TO_UW]"
+                          name="REFER_TO_UW"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                          lineageId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]"
+                          name="ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output].Columns[COUNTRY_CODE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COUNTRY_CODE]"
+                          length="225"
+                          lineageId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output].Columns[COUNTRY_CODE]"
+                          name="COUNTRY_CODE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output].Columns[COUNTRY_DESC]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COUNTRY_DESC]"
+                          length="225"
+                          lineageId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output].Columns[COUNTRY_DESC]"
+                          name="COUNTRY_DESC"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[REFER_TO_UW]"
+                          dataType="i4"
+                          name="REFER_TO_UW" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                          dataType="i4"
+                          name="ID" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COUNTRY_CODE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="225"
+                          name="COUNTRY_CODE" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COUNTRY_DESC]"
+                          codePage="1252"
+                          dataType="str"
+                          length="225"
+                          name="COUNTRY_DESC" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID]"
+                          dataType="i4"
+                          lineageId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID]"
+                          name="ID" />
+                        <outputColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COUNTRY_CODE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="225"
+                          lineageId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COUNTRY_CODE]"
+                          name="COUNTRY_CODE" />
+                        <outputColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COUNTRY_DESC]"
+                          codePage="1252"
+                          dataType="str"
+                          length="225"
+                          lineageId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COUNTRY_DESC]"
+                          name="COUNTRY_DESC" />
+                        <outputColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[REFER_TO_UW]"
+                          dataType="i4"
+                          lineageId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[REFER_TO_UW]"
+                          name="REFER_TO_UW" />
+                        <outputColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\COUNTRY\CONFIG_COUNTRY.Paths[OLE DB Source Output]"
+                  endId="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\COUNTRY\trun"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{56b8c746-a1b3-41d4-b8bd-c615f72d7d12}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="trun"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B3626D08-56D2-4588-BB8F-0594F20715F0}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE CONFIG_COUNTRY" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\COUNTRY.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{cff8d489-2464-4956-b0b9-69fd886f2293}"
+          DTS:From="Package\COUNTRY\trun"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\COUNTRY\CONFIG_COUNTRY" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\COUNTRY 1"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{3aae8c89-baf6-48b4-992e-a152471de0f5}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="COUNTRY 1">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{7fd45fbb-c153-479c-b5ff-47e8fefef45f}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CONFIG_RELATIONSHIP"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[CONFIG_RELATIONSHIP]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{B3626D08-56D2-4588-BB8F-0594F20715F0}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[BR]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RelationshipId]"
+                          cachedDataType="i4"
+                          cachedName="RelationshipId"
+                          externalMetadataColumnId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                          lineageId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output].Columns[RelationshipId]" />
+                        <inputColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DescEN]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="DescEN"
+                          externalMetadataColumnId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RELATIONSHIP_DESC_ENG]"
+                          lineageId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output].Columns[DescEN]" />
+                        <inputColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DescIN]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="DescIN"
+                          externalMetadataColumnId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RELATIONSHIP_DESC_IND]"
+                          lineageId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output].Columns[DescIN]" />
+                        <inputColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Value]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="Value"
+                          externalMetadataColumnId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RELATIONSHIP_CODE]"
+                          lineageId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                          dataType="i4"
+                          name="ID" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RELATIONSHIP_DESC_ENG]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="RELATIONSHIP_DESC_ENG" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RELATIONSHIP_DESC_IND]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="RELATIONSHIP_DESC_IND" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RELATIONSHIP_CODE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="RELATIONSHIP_CODE" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT [RelationshipId]
+      ,[DescEN]
+      ,[DescIN]
+      ,[Value]
+  FROM [AFI_NEWDLFE].[dbo].[Mst_Relationship]</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{27C4D351-4A00-4298-AD84-A62E39147C10}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DNA]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output].Columns[RelationshipId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RelationshipId]"
+                          lineageId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output].Columns[RelationshipId]"
+                          name="RelationshipId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output].Columns[DescEN]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DescEN]"
+                          length="255"
+                          lineageId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output].Columns[DescEN]"
+                          name="DescEN"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output].Columns[DescIN]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DescIN]"
+                          length="255"
+                          lineageId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output].Columns[DescIN]"
+                          name="DescIN"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value]"
+                          length="1"
+                          lineageId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value]"
+                          name="Value"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RelationshipId]"
+                          dataType="i4"
+                          name="RelationshipId" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DescEN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="DescEN" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DescIN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="DescIN" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="Value" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RelationshipId]"
+                          dataType="i4"
+                          lineageId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RelationshipId]"
+                          name="RelationshipId" />
+                        <outputColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DescEN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DescEN]"
+                          name="DescEN" />
+                        <outputColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DescIN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DescIN]"
+                          name="DescIN" />
+                        <outputColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value]"
+                          name="Value" />
+                        <outputColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\COUNTRY 1\CONFIG_RELATIONSHIP.Paths[OLE DB Source Output]"
+                  endId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\COUNTRY 1\trun"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{db4dabb2-2b75-4500-aa9e-d4bfd7dec378}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="trun"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B3626D08-56D2-4588-BB8F-0594F20715F0}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE CONFIG_RELATIONSHIP" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\COUNTRY 1.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{e0922eeb-b6dd-4187-8b81-b41b4b8abb26}"
+          DTS:From="Package\COUNTRY 1\trun"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\COUNTRY 1\CONFIG_RELATIONSHIP" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Occupation"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{FAA17087-A7FA-41AF-8B62-4A975DA61CC7}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Occupation">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Occupation\CONFIG_OCCUPATION"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{23E9C0DF-8774-4FC0-A563-8D0F02BB4D75}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CONFIG_OCCUPATION"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="CONFIG_OCCUPATION"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[CONFIG_OCCUPATION]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Connections[OleDbConnection]"
+                      connectionManagerID="{B3626D08-56D2-4588-BB8F-0594F20715F0}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[BR]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input].Columns[OCCUPATION]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="225"
+                          cachedName="OCCUPATION"
+                          externalMetadataColumnId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input].ExternalColumns[OCCUPATION]"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].Columns[OCCUPATION]" />
+                        <inputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input].Columns[OCCUPATION_CLASS]"
+                          cachedDataType="i4"
+                          cachedName="OCCUPATION_CLASS"
+                          externalMetadataColumnId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input].ExternalColumns[OCCUPATION_CLASS]"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].Columns[OCCUPATION_CLASS]" />
+                        <inputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input].Columns[REFER_TO_UW]"
+                          cachedDataType="i4"
+                          cachedName="REFER_TO_UW"
+                          externalMetadataColumnId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input].ExternalColumns[REFER_TO_UW]"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].Columns[REFER_TO_UW]" />
+                        <inputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input].Columns[MIN_ANNUAL_INCOME]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="MIN_ANNUAL_INCOME"
+                          externalMetadataColumnId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input].ExternalColumns[MIN_ANNUAL_INCOME]"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].Columns[MIN_ANNUAL_INCOME]" />
+                        <inputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input].Columns[MAX_ANNUAL_INCOME]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="MAX_ANNUAL_INCOME"
+                          externalMetadataColumnId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input].ExternalColumns[MAX_ANNUAL_INCOME]"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].Columns[MAX_ANNUAL_INCOME]" />
+                        <inputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input].Columns[MAX_SA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="MAX_SA"
+                          externalMetadataColumnId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input].ExternalColumns[MAX_SA]"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].Columns[MAX_SA]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                          dataType="i4"
+                          name="ID" />
+                        <externalMetadataColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input].ExternalColumns[OCCUPATION]"
+                          codePage="1252"
+                          dataType="str"
+                          length="500"
+                          name="OCCUPATION" />
+                        <externalMetadataColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input].ExternalColumns[OCCUPATION_CLASS]"
+                          dataType="i4"
+                          name="OCCUPATION_CLASS" />
+                        <externalMetadataColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input].ExternalColumns[REFER_TO_UW]"
+                          dataType="bool"
+                          name="REFER_TO_UW" />
+                        <externalMetadataColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input].ExternalColumns[MIN_ANNUAL_INCOME]"
+                          dataType="numeric"
+                          name="MIN_ANNUAL_INCOME"
+                          precision="18"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input].ExternalColumns[MAX_ANNUAL_INCOME]"
+                          dataType="numeric"
+                          name="MAX_ANNUAL_INCOME"
+                          precision="18"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input].ExternalColumns[MAX_SA]"
+                          dataType="numeric"
+                          name="MAX_SA"
+                          precision="18"
+                          scale="2" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select DISTINCT
+OccupationName [OCCUPATION],
+CONVERT(INT,OccupationClass) [OCCUPATION_CLASS],
+CASE WHEN OccupationClass=1 THEN 0
+ELSE 1 END REFER_TO_UW,
+'0' [MIN_ANNUAL_INCOME],
+'0' [MAX_ANNUAL_INCOME],
+'0' [MAX_SA]
+from Occupation
+UNION ALL
+select DISTINCT 
+Translation [OCCUPATION],
+CONVERT(INT,OccupationClass) [OCCUPATION_CLASS],
+CASE WHEN OccupationClass=1 THEN 0
+ELSE 1 END REFER_TO_UW,
+'0' [MIN_ANNUAL_INCOME],
+'0' [MAX_ANNUAL_INCOME],
+'0' [MAX_SA]
+from Occupation
+--where OccupationName='Agronomist'</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{27C4D351-4A00-4298-AD84-A62E39147C10}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DNA]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].Columns[OCCUPATION]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OCCUPATION]"
+                          length="225"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].Columns[OCCUPATION]"
+                          name="OCCUPATION"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].Columns[OCCUPATION_CLASS]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OCCUPATION_CLASS]"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].Columns[OCCUPATION_CLASS]"
+                          name="OCCUPATION_CLASS"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].Columns[REFER_TO_UW]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[REFER_TO_UW]"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].Columns[REFER_TO_UW]"
+                          name="REFER_TO_UW"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].Columns[MIN_ANNUAL_INCOME]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MIN_ANNUAL_INCOME]"
+                          length="1"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].Columns[MIN_ANNUAL_INCOME]"
+                          name="MIN_ANNUAL_INCOME"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].Columns[MAX_ANNUAL_INCOME]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MAX_ANNUAL_INCOME]"
+                          length="1"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].Columns[MAX_ANNUAL_INCOME]"
+                          name="MAX_ANNUAL_INCOME"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].Columns[MAX_SA]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MAX_SA]"
+                          length="1"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].Columns[MAX_SA]"
+                          name="MAX_SA"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OCCUPATION]"
+                          codePage="1252"
+                          dataType="str"
+                          length="225"
+                          name="OCCUPATION" />
+                        <externalMetadataColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OCCUPATION_CLASS]"
+                          dataType="i4"
+                          name="OCCUPATION_CLASS" />
+                        <externalMetadataColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[REFER_TO_UW]"
+                          dataType="i4"
+                          name="REFER_TO_UW" />
+                        <externalMetadataColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MIN_ANNUAL_INCOME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="MIN_ANNUAL_INCOME" />
+                        <externalMetadataColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MAX_ANNUAL_INCOME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="MAX_ANNUAL_INCOME" />
+                        <externalMetadataColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MAX_SA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="MAX_SA" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OCCUPATION]"
+                          codePage="1252"
+                          dataType="str"
+                          length="225"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OCCUPATION]"
+                          name="OCCUPATION" />
+                        <outputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OCCUPATION_CLASS]"
+                          dataType="i4"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OCCUPATION_CLASS]"
+                          name="OCCUPATION_CLASS" />
+                        <outputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[REFER_TO_UW]"
+                          dataType="i4"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[REFER_TO_UW]"
+                          name="REFER_TO_UW" />
+                        <outputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MIN_ANNUAL_INCOME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MIN_ANNUAL_INCOME]"
+                          name="MIN_ANNUAL_INCOME" />
+                        <outputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MAX_ANNUAL_INCOME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MAX_ANNUAL_INCOME]"
+                          name="MAX_ANNUAL_INCOME" />
+                        <outputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MAX_SA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MAX_SA]"
+                          name="MAX_SA" />
+                        <outputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Occupation\CONFIG_OCCUPATION.Paths[OLE DB Source Output]"
+                  endId="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Occupation\trun"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{23C6FB84-517C-487E-A256-D5450855EC31}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="trun"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B3626D08-56D2-4588-BB8F-0594F20715F0}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE CONFIG_OCCUPATION" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Occupation.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{EF7689F9-BA84-45EE-988B-50B0822886D3}"
+          DTS:From="Package\Occupation\trun"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Occupation\CONFIG_OCCUPATION" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{76C91F08-9CFD-4A99-B7C3-68BF25DEF40C}"
+      DTS:From="Package\Occupation"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\COUNTRY" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{921814B7-4B5E-4B36-BAB0-F9D0781B18DD}"
+      DTS:From="Package\COUNTRY"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\COUNTRY 1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="170.666666666667,42.6666666666667"
+          Id="Package\COUNTRY\CONFIG_COUNTRY"
+          TopLeft="19.7499994970858,82.7499981984495" />
+        <NodeLayout
+          Size="98.6666666666667,42.6666666666667"
+          Id="Package\COUNTRY\trun"
+          TopLeft="18.4999995157123,2.14999963968992" />
+        <EdgeLayout
+          Id="Package\COUNTRY.PrecedenceConstraints[Constraint]"
+          TopLeft="67.8333328490456,44.8166663063566">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="37.2499999813735,37.9333318920929"
+              Start="0,0"
+              End="37.2499999813735,30.4333318920929">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.9666659460465" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.9666659460465"
+                    Point2="0,18.9666659460465"
+                    Point3="4,18.9666659460465" />
+                  <mssgle:LineSegment
+                    End="33.2499999813735,18.9666659460465" />
+                  <mssgle:CubicBezierSegment
+                    Point1="33.2499999813735,18.9666659460465"
+                    Point2="37.2499999813735,18.9666659460465"
+                    Point3="37.2499999813735,22.9666659460465" />
+                  <mssgle:LineSegment
+                    End="37.2499999813735,30.4333318920929" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="250.666666666667,182"
+          Size="250.666666666667,42.6666666666667"
+          Id="Package\COUNTRY"
+          TopLeft="20.6249996926635,95.5166672594349" />
+        <NodeLayout
+          Size="188,42.6666666666667"
+          Id="Package\Occupation\CONFIG_OCCUPATION"
+          TopLeft="20.3749994877726,82.0999982100725" />
+        <NodeLayout
+          Size="98.6666666666667,42.6666666666667"
+          Id="Package\Occupation\trun"
+          TopLeft="17.8749995250255,1.49999965131283" />
+        <EdgeLayout
+          Id="Package\Occupation.PrecedenceConstraints[Constraint]"
+          TopLeft="67.2083328583588,44.1666663179795">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="47.1666666294138,37.933331892093"
+              Start="0,0"
+              End="47.1666666294138,30.433331892093">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.9666659460465" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.9666659460465"
+                    Point2="0,18.9666659460465"
+                    Point3="4,18.9666659460465" />
+                  <mssgle:LineSegment
+                    End="43.1666666294138,18.9666659460465" />
+                  <mssgle:CubicBezierSegment
+                    Point1="43.1666666294138,18.9666659460465"
+                    Point2="47.1666666294138,18.9666659460465"
+                    Point3="47.1666666294138,22.9666659460465" />
+                  <mssgle:LineSegment
+                    End="47.1666666294138,30.433331892093" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="250.666666666667,181.333333333334"
+          Size="250.666666666667,42.6666666666667"
+          Id="Package\Occupation"
+          TopLeft="13.749999795109,28.5999999535084" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="142.52083307722,71.2666666201751">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.2500006392598"
+              Start="0,0"
+              End="0,16.7500006392598">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.7500006392598" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="196,42.6666666666667"
+          Id="Package\COUNTRY 1\CONFIG_RELATIONSHIP"
+          TopLeft="19.7499994970858,82.7499981984495" />
+        <NodeLayout
+          Size="98.6666666666667,42.6666666666667"
+          Id="Package\COUNTRY 1\trun"
+          TopLeft="18.4999995157123,2.14999963968992" />
+        <EdgeLayout
+          Id="Package\COUNTRY 1.PrecedenceConstraints[Constraint]"
+          TopLeft="67.8333328490456,44.8166663063566">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49.9166666480402,37.9333318920929"
+              Start="0,0"
+              End="49.9166666480402,30.4333318920929">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.9666659460465" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.9666659460465"
+                    Point2="0,18.9666659460465"
+                    Point3="4,18.9666659460465" />
+                  <mssgle:LineSegment
+                    End="45.9166666480402,18.9666659460465" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.9166666480402,18.9666659460465"
+                    Point2="49.9166666480402,18.9666659460465"
+                    Point3="49.9166666480402,22.9666659460465" />
+                  <mssgle:LineSegment
+                    End="49.9166666480402,30.4333318920929" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="250.666666666667,182"
+          Size="250.666666666667,225.333333333334"
+          Id="Package\COUNTRY 1"
+          TopLeft="24.9999996274709,175.433334332903" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="148.145832993401,138.183333926102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.2500004068017"
+              Start="0,0"
+              End="0,29.7500004068017">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.7500004068017" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\COUNTRY\CONFIG_COUNTRY">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source"
+          TopLeft="57.4999991431832,11.0499998024106" />
+        <NodeLayout
+          Size="170.666666666667,42.6666666666667"
+          Id="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY"
+          TopLeft="101,111" />
+        <EdgeLayout
+          Id="Package\COUNTRY\CONFIG_COUNTRY.Paths[OLE DB Source Output]"
+          TopLeft="132.833332476517,53.7166664690773">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="53.5000008568168,57.2833335309227"
+              Start="0,0"
+              End="53.5000008568168,49.7833335309227">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.6416667654614" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.6416667654614"
+                    Point2="0,28.6416667654614"
+                    Point3="4,28.6416667654614" />
+                  <mssgle:LineSegment
+                    End="49.5000008568168,28.6416667654614" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49.5000008568168,28.6416667654614"
+                    Point2="53.5000008568168,28.6416667654614"
+                    Point3="53.5000008568168,32.6416667654614" />
+                  <mssgle:LineSegment
+                    End="53.5000008568168,49.7833335309227" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\COUNTRY\CONFIG_COUNTRY\CONFIG_COUNTRY">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\COUNTRY\CONFIG_COUNTRY\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Occupation\CONFIG_OCCUPATION">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source"
+          TopLeft="57.4999991431832,11.0499998024106" />
+        <NodeLayout
+          Size="188,42.6666666666667"
+          Id="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION"
+          TopLeft="30.6249995436519,92.9499983379245" />
+        <EdgeLayout
+          Id="Package\Occupation\CONFIG_OCCUPATION.Paths[OLE DB Source Output]"
+          TopLeft="132.833332476517,53.7166664690773">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8.20833293286464,39.2333318688472"
+              Start="0,0"
+              End="-8.20833293286464,31.7333318688472">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.6166659344236" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.6166659344236"
+                    Point2="0,19.6166659344236"
+                    Point3="-4,19.6166659344236" />
+                  <mssgle:LineSegment
+                    End="-4.20833293286464,19.6166659344236" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.20833293286464,19.6166659344236"
+                    Point2="-8.20833293286464,19.6166659344236"
+                    Point3="-8.20833293286464,23.6166659344236" />
+                  <mssgle:LineSegment
+                    End="-8.20833293286464,31.7333318688472" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Occupation\CONFIG_OCCUPATION\CONFIG_OCCUPATION">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Occupation\CONFIG_OCCUPATION\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\COUNTRY 1\CONFIG_RELATIONSHIP">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source"
+          TopLeft="59.4999991431832,11.0499998024106" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination"
+          TopLeft="120,107" />
+        <EdgeLayout
+          Id="Package\COUNTRY 1\CONFIG_RELATIONSHIP.Paths[OLE DB Source Output]"
+          TopLeft="134.833332476517,53.7166664690773">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="71.1666675234835,53.2833335309227"
+              Start="0,0"
+              End="71.1666675234835,45.7833335309227">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.6416667654614" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.6416667654614"
+                    Point2="0,26.6416667654614"
+                    Point3="4,26.6416667654614" />
+                  <mssgle:LineSegment
+                    End="67.1666675234835,26.6416667654614" />
+                  <mssgle:CubicBezierSegment
+                    Point1="67.1666675234835,26.6416667654614"
+                    Point2="71.1666675234835,26.6416667654614"
+                    Point3="71.1666675234835,30.6416667654614" />
+                  <mssgle:LineSegment
+                    End="71.1666675234835,45.7833335309227" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\COUNTRY 1\CONFIG_RELATIONSHIP\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

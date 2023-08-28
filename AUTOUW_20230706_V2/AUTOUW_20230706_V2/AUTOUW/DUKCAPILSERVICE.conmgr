@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DUKCAPILSERVICE"
+  DTS:DTSID="{F33BBC0C-DB28-417A-B251-2A438A77104D}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=wrdsql10;User ID=confirmation_app;Initial Catalog=dukcapil_service;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkAw03UN3JUaRKxjxkinyyQAAAAACAAAAAAADZgAAwAAAABAAAADR8lLWjteg1ioxJ06YQDF3AAAAAASAAACgAAAAEAAAAEzYMKY0srJ9pPDd/HJn6+iAAAAAjWy5ggJzYsaqo7QRbjmxX+/amZ4ps3i1o/xUdy0ta/bljnQCA68CM2Y51t7JbCHTCQyRogW+smcgJGc2t0V/AsaJFDj+houvv/FoD4d7ykGjqOshUI0/JV9NJrzZpklaFhQfn4PNvHFAAhHyWIrBacJrgXgG/GqQ2jpKFkSa58kUAAAAk6qa4JvZUft1evHqq0xYtr3tDk4=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,1674 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/4/2023 3:56:02 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ID-AFI-42DRKR3"
+  DTS:CreatorName="AXA-INDONESIA\Mega Lestarie"
+  DTS:DTSID="{33364602-FB7D-4AF6-8F7F-2777684FD703}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.150"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{28A395C7-6C1B-4577-9FF5-A459E9B75D6C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\AGENT"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{c7e4311c-c0c7-4f41-ac39-8d990825b266}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="AGENT">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\AGENT\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{8be131ff-7271-443b-94ec-6ca82c492dd0}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\AGENT\Data Flow Task\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[AGENT]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\AGENT\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{B3626D08-56D2-4588-BB8F-0594F20715F0}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[BR]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\AGENT\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\AGENT\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DPAGC]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="6"
+                          cachedName="DPAGC"
+                          externalMetadataColumnId="Package\AGENT\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DPAGC]"
+                          lineageId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DPAGC]" />
+                        <inputColumn
+                          refId="Package\AGENT\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DPGRP]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="DPGRP"
+                          externalMetadataColumnId="Package\AGENT\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DPGRP]"
+                          lineageId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DPGRP]" />
+                        <inputColumn
+                          refId="Package\AGENT\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EMAIL_AGENT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="103"
+                          cachedName="EMAIL_AGENT"
+                          externalMetadataColumnId="Package\AGENT\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EMAIL_AGENT]"
+                          lineageId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EMAIL_AGENT]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\AGENT\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DPAGC]"
+                          codePage="1252"
+                          dataType="str"
+                          length="6"
+                          name="DPAGC" />
+                        <externalMetadataColumn
+                          refId="Package\AGENT\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DPGRP]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="DPGRP" />
+                        <externalMetadataColumn
+                          refId="Package\AGENT\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EMAIL_AGENT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="EMAIL_AGENT" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\AGENT\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\AGENT\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\AGENT\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\AGENT\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\AGENT\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\AGENT\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\AGENT\Data Flow Task\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct 
+right(cast('000'+ convert(varchar,DPAGC) as varchar),6) DPAGC,
+LTRIM(RTRIM(DPGRP)) DPGRP,
+'XXX'+LTRIM(RTRIM(AGEMIL)) [EMAIL_AGENT]
+
+from STG_AFI_FLAT.dbo.IDAS_DLPAGSTR_DLPAGSTT_MONTHLY
+where FACTPERIOD in (select max(FACTPERIOD) from STG_AFI_FLAT.dbo.IDAS_DLPAGSTR_DLPAGSTT_MONTHLY)
+and MANPOWER_STATUS='Y'</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\AGENT\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{EF45A299-72F5-4026-AA7C-C5DA1D176222}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[wrcsql33.STG_AFI.afi_idas_sql]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DPAGC]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DPAGC]"
+                          length="6"
+                          lineageId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DPAGC]"
+                          name="DPAGC"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DPGRP]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DPGRP]"
+                          length="30"
+                          lineageId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DPGRP]"
+                          name="DPGRP"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EMAIL_AGENT]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EMAIL_AGENT]"
+                          length="103"
+                          lineageId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EMAIL_AGENT]"
+                          name="EMAIL_AGENT"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DPAGC]"
+                          codePage="1252"
+                          dataType="str"
+                          length="6"
+                          name="DPAGC" />
+                        <externalMetadataColumn
+                          refId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DPGRP]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="DPGRP" />
+                        <externalMetadataColumn
+                          refId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EMAIL_AGENT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="103"
+                          name="EMAIL_AGENT" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DPAGC]"
+                          codePage="1252"
+                          dataType="str"
+                          length="6"
+                          lineageId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DPAGC]"
+                          name="DPAGC" />
+                        <outputColumn
+                          refId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DPGRP]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DPGRP]"
+                          name="DPGRP" />
+                        <outputColumn
+                          refId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EMAIL_AGENT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="103"
+                          lineageId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EMAIL_AGENT]"
+                          name="EMAIL_AGENT" />
+                        <outputColumn
+                          refId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\AGENT\Data Flow Task.Paths[OLE DB Source Output]"
+                  endId="Package\AGENT\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\AGENT\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\AGENT\TRUNCATE NIK"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{35b0b35a-ef00-44b8-b9a1-48da01010997}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCATE NIK"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B3626D08-56D2-4588-BB8F-0594F20715F0}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE AGENT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\AGENT.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{d7007400-979d-495d-9f58-ae82b9306967}"
+          DTS:From="Package\AGENT\TRUNCATE NIK"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\AGENT\Data Flow Task" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CONFIG_CRR_RISKRATINGITEM"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{7bbba539-4207-449f-9460-abff60b7a97e}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CONFIG_CRR_RISKRATINGITEM">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{26525cf0-b4c4-40d2-a0c3-32c3447742bc}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[CONFIG_CRR_RISKRATINGITEM]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{B3626D08-56D2-4588-BB8F-0594F20715F0}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[BR]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ITEMTABLE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="ITEMTABLE"
+                          externalMetadataColumnId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ITEMTABLE]"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ITEMTABLE]" />
+                        <inputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ITEMCODE]"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
+                          cachedName="ITEMCODE"
+                          externalMetadataColumnId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ITEMCODE]"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ITEMCODE]" />
+                        <inputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DESCRIPTION]"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
+                          cachedName="DESCRIPTION"
+                          externalMetadataColumnId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DESCRIPTION]"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DESCRIPTION]" />
+                        <inputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RISKLEVEL]"
+                          cachedDataType="numeric"
+                          cachedName="RISKLEVEL"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RISKLEVEL]"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RISKLEVEL]" />
+                        <inputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RATING]"
+                          cachedDataType="numeric"
+                          cachedName="RATING"
+                          cachedPrecision="18"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RATING]"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RATING]" />
+                        <inputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PRODUCT_TYPE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PRODUCT_TYPE"
+                          externalMetadataColumnId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_TYPE]"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRODUCT_TYPE]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ITEMTABLE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="ITEMTABLE" />
+                        <externalMetadataColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ITEMCODE]"
+                          dataType="wstr"
+                          length="1000"
+                          name="ITEMCODE" />
+                        <externalMetadataColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DESCRIPTION]"
+                          dataType="wstr"
+                          length="1000"
+                          name="DESCRIPTION" />
+                        <externalMetadataColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RISKLEVEL]"
+                          dataType="numeric"
+                          name="RISKLEVEL"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RATING]"
+                          dataType="numeric"
+                          name="RATING"
+                          precision="18"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_TYPE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PRODUCT_TYPE" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[RISKRATINGITEM]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{7FD7678D-64AF-4EE5-BF1E-E26C607A3F26}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[COMP_REPO]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ITEMTABLE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ITEMTABLE]"
+                          length="15"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ITEMTABLE]"
+                          name="ITEMTABLE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ITEMCODE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ITEMCODE]"
+                          length="1000"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ITEMCODE]"
+                          name="ITEMCODE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DESCRIPTION]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DESCRIPTION]"
+                          length="1000"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DESCRIPTION]"
+                          name="DESCRIPTION"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RISKLEVEL]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RISKLEVEL]"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RISKLEVEL]"
+                          name="RISKLEVEL"
+                          precision="18"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RATING]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RATING]"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RATING]"
+                          name="RATING"
+                          precision="18"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRODUCT_TYPE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PRODUCT_TYPE]"
+                          length="50"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRODUCT_TYPE]"
+                          name="PRODUCT_TYPE"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ITEMTABLE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="ITEMTABLE" />
+                        <externalMetadataColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ITEMCODE]"
+                          dataType="wstr"
+                          length="1000"
+                          name="ITEMCODE" />
+                        <externalMetadataColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DESCRIPTION]"
+                          dataType="wstr"
+                          length="1000"
+                          name="DESCRIPTION" />
+                        <externalMetadataColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RISKLEVEL]"
+                          dataType="numeric"
+                          name="RISKLEVEL"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RATING]"
+                          dataType="numeric"
+                          name="RATING"
+                          precision="18"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PRODUCT_TYPE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PRODUCT_TYPE" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ITEMTABLE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ITEMTABLE]"
+                          name="ITEMTABLE" />
+                        <outputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ITEMCODE]"
+                          dataType="wstr"
+                          length="1000"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ITEMCODE]"
+                          name="ITEMCODE" />
+                        <outputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DESCRIPTION]"
+                          dataType="wstr"
+                          length="1000"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DESCRIPTION]"
+                          name="DESCRIPTION" />
+                        <outputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RISKLEVEL]"
+                          dataType="numeric"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RISKLEVEL]"
+                          name="RISKLEVEL"
+                          precision="18" />
+                        <outputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RATING]"
+                          dataType="numeric"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RATING]"
+                          name="RATING"
+                          precision="18"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PRODUCT_TYPE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PRODUCT_TYPE]"
+                          name="PRODUCT_TYPE" />
+                        <outputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task.Paths[OLE DB Source Output]"
+                  endId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CONFIG_CRR_RISKRATINGITEM\TRUNCATE NIK"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{28baa29f-eb3e-4ae4-ab16-167c5f62dd50}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCATE NIK"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B3626D08-56D2-4588-BB8F-0594F20715F0}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE CONFIG_CRR_RISKRATINGITEM" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\CONFIG_CRR_RISKRATINGITEM.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{a63a92bb-fbf2-489f-a310-1feea34d5474}"
+          DTS:From="Package\CONFIG_CRR_RISKRATINGITEM\TRUNCATE NIK"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\NIK"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{EA17EBE3-F857-492B-BE98-6C6E25DE4DB9}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="NIK">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\NIK\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{33E3CB7A-DBB0-4539-98F6-BB34070A114A}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\NIK\Data Flow Task\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[TEMP_DATA_NIK]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\NIK\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{B3626D08-56D2-4588-BB8F-0594F20715F0}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[BR]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\NIK\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\NIK\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HOLDER_IDENTITYNO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="HOLDER_IDENTITYNO"
+                          externalMetadataColumnId="Package\NIK\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NIK]"
+                          lineageId="Package\NIK\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[HOLDER_IDENTITYNO]" />
+                        <inputColumn
+                          refId="Package\NIK\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[KEY_1]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="128"
+                          cachedName="KEY_1"
+                          externalMetadataColumnId="Package\NIK\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NAMEDOBGENDER]"
+                          lineageId="Package\NIK\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[KEY_1]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\NIK\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NIK]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="NIK" />
+                        <externalMetadataColumn
+                          refId="Package\NIK\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NAMEDOBGENDER]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1000"
+                          name="NAMEDOBGENDER" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\NIK\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\NIK\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\NIK\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\NIK\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\NIK\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\NIK\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\NIK\Data Flow Task\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM VW_AUTOUW_CHECKING_NIK NOLOCK</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\NIK\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{EF45A299-72F5-4026-AA7C-C5DA1D176222}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[wrcsql33.STG_AFI.afi_idas_sql]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\NIK\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\NIK\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[HOLDER_IDENTITYNO]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\NIK\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[HOLDER_IDENTITYNO]"
+                          length="20"
+                          lineageId="Package\NIK\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[HOLDER_IDENTITYNO]"
+                          name="HOLDER_IDENTITYNO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\NIK\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[KEY_1]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\NIK\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[KEY_1]"
+                          length="128"
+                          lineageId="Package\NIK\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[KEY_1]"
+                          name="KEY_1"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\NIK\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[HOLDER_IDENTITYNO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="HOLDER_IDENTITYNO" />
+                        <externalMetadataColumn
+                          refId="Package\NIK\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[KEY_1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="128"
+                          name="KEY_1" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\NIK\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\NIK\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[HOLDER_IDENTITYNO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\NIK\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[HOLDER_IDENTITYNO]"
+                          name="HOLDER_IDENTITYNO" />
+                        <outputColumn
+                          refId="Package\NIK\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[KEY_1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="128"
+                          lineageId="Package\NIK\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[KEY_1]"
+                          name="KEY_1" />
+                        <outputColumn
+                          refId="Package\NIK\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\NIK\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\NIK\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\NIK\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\NIK\Data Flow Task.Paths[OLE DB Source Output]"
+                  endId="Package\NIK\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\NIK\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\NIK\SPINSERT"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{C898433B-D472-462E-9E74-0F0FA5D0BDC1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SPINSERT"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B3626D08-56D2-4588-BB8F-0594F20715F0}"
+              SQLTask:SqlStatementSource="EXEC SP_GETDATA_NIK" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\NIK\TRUNCATE TEMP NIK"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{BE0EBB8B-B060-4745-96E7-B56A339BCC1E}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCATE TEMP NIK"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B3626D08-56D2-4588-BB8F-0594F20715F0}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE TEMP_DATA_NIK" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\NIK.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{9478F3CA-A437-4675-A85A-77B9AFD228EF}"
+          DTS:From="Package\NIK\TRUNCATE TEMP NIK"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\NIK\Data Flow Task" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\NIK.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{6DC23917-B3E4-4670-B941-3B8037C7F2D0}"
+          DTS:From="Package\NIK\Data Flow Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\NIK\SPINSERT" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{7B40BFAF-714D-426F-B6C5-2287BFF1F795}"
+      DTS:From="Package\NIK"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\AGENT" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\AGENT\Data Flow Task"
+          TopLeft="5.50000000000001,108.166666666667" />
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\AGENT\TRUNCATE NIK"
+          TopLeft="5.50000000000001,5.50000000000004" />
+        <EdgeLayout
+          Id="Package\AGENT.PrecedenceConstraints[Constraint]"
+          TopLeft="81.5,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="163.333333333334,206"
+          Size="163.333333333334,248.666666666667"
+          Id="Package\AGENT"
+          TopLeft="398.232142525857,0.0666667131582983" />
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\NIK\Data Flow Task"
+          TopLeft="73.29166541559,92.5999974739552" />
+        <NodeLayout
+          Size="128,42.6666666666667"
+          Id="Package\NIK\SPINSERT"
+          TopLeft="95.0416627271722,185.783329927822" />
+        <NodeLayout
+          Size="181.333333333334,42.6666666666667"
+          Id="Package\NIK\TRUNCATE TEMP NIK"
+          TopLeft="81.2916629320632,3.61666562447946" />
+        <EdgeLayout
+          Id="Package\NIK.PrecedenceConstraints[Constraint]"
+          TopLeft="171.95832959873,46.2833322911461">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-22.6666641831399,46.3166651828091"
+              Start="0,0"
+              End="-22.6666641831399,38.8166651828091">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.1583325914045" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.1583325914045"
+                    Point2="0,23.1583325914045"
+                    Point3="-4,23.1583325914045" />
+                  <mssgle:LineSegment
+                    End="-18.6666641831399,23.1583325914045" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.6666641831399,23.1583325914045"
+                    Point2="-22.6666641831399,23.1583325914045"
+                    Point3="-22.6666641831399,27.1583325914045" />
+                  <mssgle:LineSegment
+                    End="-22.6666641831399,38.8166651828091" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\NIK.PrecedenceConstraints[Constraint 1]"
+          TopLeft="149.29166541559,135.266664140622">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.74999731158221,50.5166657872002"
+              Start="0,0"
+              End="9.74999731158221,43.0166657872002">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.2583328936001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.2583328936001"
+                    Point2="0,25.2583328936001"
+                    Point3="4,25.2583328936001" />
+                  <mssgle:LineSegment
+                    End="5.74999731158221,25.2583328936001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.74999731158221,25.2583328936001"
+                    Point2="9.74999731158221,25.2583328936001"
+                    Point3="9.74999731158221,29.2583328936001" />
+                  <mssgle:LineSegment
+                    End="9.74999731158221,43.0166657872002" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="316,283.333333333334"
+          Size="316,326"
+          Id="Package\NIK"
+          TopLeft="24.3749996367843,3.22380951384704" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="340.374999636784,166.223809513847">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="57.8571428890726,-41.8238094673554"
+              Start="0,0"
+              End="50.3571428890726,-41.8238094673554">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="24.9285714445363,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24.9285714445363,0"
+                    Point2="28.9285714445363,0"
+                    Point3="28.9285714445363,-4" />
+                  <mssgle:LineSegment
+                    End="28.9285714445363,-37.8238094673554" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28.9285714445363,-37.8238094673554"
+                    Point2="28.9285714445363,-41.8238094673554"
+                    Point3="32.9285714445363,-41.8238094673554" />
+                  <mssgle:LineSegment
+                    End="50.3571428890726,-41.8238094673554" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task"
+          TopLeft="71.148808304664,88.7928546848894" />
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\CONFIG_CRR_RISKRATINGITEM\TRUNCATE NIK"
+          TopLeft="81.2916629320632,2.53333231051764" />
+        <EdgeLayout
+          Id="Package\CONFIG_CRR_RISKRATINGITEM.PrecedenceConstraints[Constraint]"
+          TopLeft="157.291662932063,45.1999989771843">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.1428546273992,43.5928557077051"
+              Start="0,0"
+              End="-10.1428546273992,36.0928557077051">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.7964278538526" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.7964278538526"
+                    Point2="0,21.7964278538526"
+                    Point3="-4,21.7964278538526" />
+                  <mssgle:LineSegment
+                    End="-6.14285462739923,21.7964278538526" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.14285462739923,21.7964278538526"
+                    Point2="-10.1428546273992,21.7964278538526"
+                    Point3="-10.1428546273992,25.7964278538526" />
+                  <mssgle:LineSegment
+                    End="-10.1428546273992,36.0928557077051" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="316,284"
+          Size="316,326.666666666667"
+          Id="Package\CONFIG_CRR_RISKRATINGITEM"
+          TopLeft="571.249998242905,30.7666661165158" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\AGENT\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\AGENT\Data Flow Task\OLE DB Source"
+          TopLeft="42.4999993667006,24.6999995583296" />
+        <NodeLayout
+          Size="171.333333333334,42.6666666666667"
+          Id="Package\AGENT\Data Flow Task\OLE DB Destination"
+          TopLeft="91.2499986402691,115.049997942746" />
+        <EdgeLayout
+          Id="Package\AGENT\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="117.833332700034,67.3666662249963">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="59.0833326069018,47.6833317177495"
+              Start="0,0"
+              End="59.0833326069018,40.1833317177495">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.8416658588748" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.8416658588748"
+                    Point2="0,23.8416658588748"
+                    Point3="4,23.8416658588748" />
+                  <mssgle:LineSegment
+                    End="55.0833326069018,23.8416658588748" />
+                  <mssgle:CubicBezierSegment
+                    Point1="55.0833326069018,23.8416658588748"
+                    Point2="59.0833326069018,23.8416658588748"
+                    Point3="59.0833326069018,27.8416658588748" />
+                  <mssgle:LineSegment
+                    End="59.0833326069018,40.1833317177495" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\AGENT\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\AGENT\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\NIK\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\NIK\Data Flow Task\OLE DB Source"
+          TopLeft="92.4999986216426,22.7499995931983" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\NIK\Data Flow Task\OLE DB Destination"
+          TopLeft="209.999996870756,102.699998163581" />
+        <EdgeLayout
+          Id="Package\NIK\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="167.833331954976,65.416666259865">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="128.16666491578,37.2833319037159"
+              Start="0,0"
+              End="128.16666491578,29.7833319037159">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.641665951858" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.641665951858"
+                    Point2="0,18.641665951858"
+                    Point3="4,18.641665951858" />
+                  <mssgle:LineSegment
+                    End="124.16666491578,18.641665951858" />
+                  <mssgle:CubicBezierSegment
+                    Point1="124.16666491578,18.641665951858"
+                    Point2="128.16666491578,18.641665951858"
+                    Point3="128.16666491578,22.641665951858" />
+                  <mssgle:LineSegment
+                    End="128.16666491578,29.7833319037159" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\NIK\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\NIK\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source"
+          TopLeft="87.4999986961484,29.2499994769693" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination"
+          TopLeft="142.499997876584,97.5499982914329" />
+        <EdgeLayout
+          Id="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="162.833332029482,71.9166661436359">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="65.6666658471027,25.633332147797"
+              Start="0,0"
+              End="65.6666658471027,18.133332147797">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.81666607389849" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.81666607389849"
+                    Point2="0,12.8166660738985"
+                    Point3="4,12.8166660738985" />
+                  <mssgle:LineSegment
+                    End="61.6666658471027,12.8166660738985" />
+                  <mssgle:CubicBezierSegment
+                    Point1="61.6666658471027,12.8166660738985"
+                    Point2="65.6666658471027,12.8166660738985"
+                    Point3="65.6666658471027,16.8166660738985" />
+                  <mssgle:LineSegment
+                    End="65.6666658471027,18.133332147797" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CONFIG_CRR_RISKRATINGITEM\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

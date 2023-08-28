@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="nr"
+  DTS:DTSID="{D9EB8561-D385-4976-B281-39160602F962}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=wrdsql07;User ID=AFI_IDAS_SQL;Initial Catalog=AFI_NR_LIL;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkAw03UN3JUaRKxjxkinyyQAAAAACAAAAAAADZgAAwAAAABAAAADYd18ZUmu81yQLT19FIlq3AAAAAASAAACgAAAAEAAAAD7ZhFWAnbt8dGmHO8QQ8RJ4AAAAwgsBpgDaX7RSJZv7c/xO4oTCUgNRlJtE1k1+85Wu6qIm4f/t4jqxUr7TjKqEqAGJlQ90hI5PpACjrzx1DmXnWzjeD0FF+XQ2LlK67zOmjKF2oD7jQDM7tq1wNzqc0NXNRDLM0WW7UIWMPEd5O37bo9q18LWqy2fJFAAAAMz/Vdd6OEFolV3x7dS7dIb3SYcu</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

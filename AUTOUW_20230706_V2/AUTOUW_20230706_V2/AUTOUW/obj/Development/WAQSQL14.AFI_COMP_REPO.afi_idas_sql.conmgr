@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="WAQSQL14.AFI_COMP_REPO.afi_idas_sql"
+  DTS:DTSID="{C334BD9E-BA64-47D4-A886-6D31638B7ED4}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=WAQSQL14;User ID=afi_idas_sql;Initial Catalog=AFI_COMP_REPO;Provider=SQLNCLI11.1;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANSViaN8QZ02hfsZI6q49SgAAAAACAAAAAAADZgAAwAAAABAAAAC7tNLnNx9Ft50pr1RC9/diAAAAAASAAACgAAAAEAAAAFCLNT1q97EaVevNvmQaluF4AAAAUUwwsDhPYUO7oLbsqxwKPqZ3XeA6IFvYVmGsV0aO+5CQyZZNAJ5OruKlksfxHtHh7j95EvvmWcpfqjY10xYJDou6yfaqt7lXkdnIXVfbGkTSdyhBGdAyCI0MmGbt+yzcvEpS9UYdA3YXg00h+EfWr360F1J2lwTmFAAAACpxTimc1oqR4gpfO25Ay/1EBO/f</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

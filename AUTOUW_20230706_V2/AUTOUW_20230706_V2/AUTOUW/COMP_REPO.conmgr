@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="COMP_REPO"
+  DTS:DTSID="{7FD7678D-64AF-4EE5-BF1E-E26C607A3F26}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=WApSQL12;User ID=AFI_IDAS_SQL;Initial Catalog=AFI_COMP_REPO;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkAw03UN3JUaRKxjxkinyyQAAAAACAAAAAAADZgAAwAAAABAAAABHxWRmD88psBcg61tPqfqkAAAAAASAAACgAAAAEAAAAEUWmfstDnFX8Ca9eDIOI/aAAAAAtAh9kVAvwuGlWUrKjIZaQ6fwBPmayYQ5qEY/aNwmpPP6XRiSFi0TtlubnZv4f2teGoZ1iA6AvwtuW/VkElNLdhuNcDpsONruaAklSLneQZIB1n6IiCuRpDw0aV0BaZ1U32NxHVqgkuFGmr8o6GPXyU6+i8E2z6YOy1oBmy3/i98UAAAAW7HCb+dfx2Az5Lq6kXYw6g0BOzU=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
